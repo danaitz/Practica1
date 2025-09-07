@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h> 
+
+  double calculaPi(double itera) {
+  double numdor = 4;
+  double deno;
+  printf("Ingrese un numero para calcular pi: ");
+  scanf("%lf", &deno); // Numero que se sumara o restara
+  double pi=0;
+  int i=0;
+  int operador=1;
+  for (i; i<itera; i++) {
+    pi+=operador*(numdor/deno); //formula para obtener pi
+    deno+=2; //El denominador aumenta de 2 en 2
+    operador*=-1; // alternar entre positivo y negativo
+  }
+  return pi;
+ }
+
+
+int main() {
+  int itera = 5000000; //numero de iteraciones
+  double pi = calculaPi(itera);
+  printf("Al calcular pi con: %-8.d de iteraciones\n", itera);
+  printf("Se obtiene: %1.20lf\n",pi);
